@@ -1,0 +1,107 @@
+/* Restablecer márgenes y paddings del body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evitar scroll horizontal */
+}
+/* Menú superior */
+#menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Para mantener el menú fijo en la parte superior */
+    top: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #d90303, #9c00a4, #000e6b); /* Gradiente de rojo a morado y azul oscuro */
+    padding: 20px; /* Espaciado superior e inferior */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para el menú */
+    z-index: 1000; /* Asegura que el menú quede encima del contenido */
+}
+
+.menu-boton {
+    margin: 0 15px; /* Espaciado entre los botones */
+    padding: 10px 20px; /* Espaciado interno de los botones */
+    text-align: center;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #ffffff; /* Texto blanco para contraste con el fondo gradiente */
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-boton:hover {
+    background-color: rgba(255, 0, 230, 0.44); /* Fondo semitransparente al pasar el cursor */
+    color: #ffffff;
+    border-color: rgba(255, 2, 192, 0.859); /* Borde semitransparente */
+}
+
+/* Pie de página */
+#pie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Para mantener el pie fijo en la parte inferior */
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #d90303, #9c00a4, #000e6b); /* Gradiente similar al del menú */
+    padding: 20px; /* Espaciado superior e inferior */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra hacia arriba para el pie */
+    z-index: 1000; /* Asegura que el pie quede encima del contenido */
+    color: #ffffff; /* Texto blanco */
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+#pie a {
+    color: #ffffff; /* Enlaces blancos */
+    text-decoration: none; /* Sin subrayado */
+    margin: 0 10px; /* Espaciado entre enlaces */
+    transition: color 0.3s ease;
+}
+
+#pie a:hover {
+    color: rgba(255, 0, 230, 0.75); /* Color rosado al pasar el cursor */
+}
+/* Estilo del menú emergente para selección de idioma */
+#menu-idiomas {
+    position: absolute;
+    background-color: #f0f0f0; /* Fondo claro */
+    border: 1px solid #ccc; /* Borde suave */
+    padding: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    z-index: 1001; /* Asegurarse de que el menú esté por encima del contenido */
+    border-radius: 5px;
+    width: 155px; /* Ancho fijo para el menú */
+}
+
+/* Estilo para las opciones dentro del menú */
+#menu-idiomas div {
+    padding: 8px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    color: #333; /* Color oscuro para el texto */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilo cuando se pasa el ratón sobre una opción */
+#menu-idiomas div:hover {
+    background-color: rgba(0, 0, 255, 0.1); /* Fondo semitransparente */
+    color: #d90303; /* Color de texto cuando pasa el ratón */
+}
+
+/* Estilo del icono dentro del botón */
+#boton-cambiar-idioma i {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+    font-size: 18px; /* Tamaño del icono */
+    vertical-align: middle; /* Centrar el icono verticalmente */
+}
