@@ -44,6 +44,15 @@ body {
     border-color: rgba(255, 2, 192, 0.859); /* Borde semitransparente */
 }
 
+
+/* Estilos adicionales para el contenedor */
+#contenedor {
+    margin-top: 100px; /* Para dar espacio debajo del menú */
+    padding: 20px;
+    font-size: 18px; /* Tamaño de fuente para que el texto sea visible */
+    font-family: Arial, sans-serif;
+}
+
 /* Pie de página */
 #pie {
     display: flex;

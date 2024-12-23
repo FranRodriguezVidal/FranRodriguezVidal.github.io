@@ -1,5 +1,3 @@
-// JavaScript para cambiar el idioma dinámicamente
-
 // Elementos del DOM
 const botonCambiarIdioma = document.getElementById('boton-cambiar-idioma');
 const contenedor = document.getElementById('contenedor');
@@ -12,15 +10,15 @@ const idiomas = {
         redesSociales: "Redes sociales",
         github: "GitHub",
         cambiarIdioma: "Cambiar idioma",
-        contenido: "Hola",
+        contenido: "Hola, soy Fran. Bienvenidos a mi página.",
         pie: "&copy; 2024 Fran. Todos los derechos reservados."
     },
     en: {
         sobreMi: "About me",
         redesSociales: "Social media",
         github: "GitHub",
-        cambiarIdioma: " Change language",
-        contenido: "Hello",
+        cambiarIdioma: "Change language",
+        contenido: "Hello, I'm Fran. Welcome to my page.",
         pie: "&copy; 2024 Fran. All rights reserved."
     }
 };
@@ -30,7 +28,6 @@ let idiomaActual = 'es';
 
 // Crear menú de selección de idioma
 const crearMenuIdiomas = () => {
-    // Crear un contenedor para las opciones de idioma
     const menuIdiomas = document.createElement('div');
     menuIdiomas.id = 'menu-idiomas';
     menuIdiomas.style.position = 'absolute';
@@ -39,7 +36,6 @@ const crearMenuIdiomas = () => {
     menuIdiomas.style.padding = '10px';
     menuIdiomas.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
 
-    // Crear opciones de idioma
     const opcionEspanol = document.createElement('div');
     opcionEspanol.textContent = 'Español';
     opcionEspanol.style.cursor = 'pointer';
@@ -50,19 +46,14 @@ const crearMenuIdiomas = () => {
     opcionIngles.style.cursor = 'pointer';
     opcionIngles.onclick = () => cambiarIdioma('en');
 
-    // Agregar opciones al menú
     menuIdiomas.appendChild(opcionEspanol);
     menuIdiomas.appendChild(opcionIngles);
-
-    // Agregar el menú al DOM
     document.body.appendChild(menuIdiomas);
 
-    // Posicionar el menú cerca del botón
     const rect = botonCambiarIdioma.getBoundingClientRect();
     menuIdiomas.style.top = `${rect.bottom + window.scrollY}px`;
     menuIdiomas.style.left = `${rect.left + window.scrollX}px`;
 
-    // Cerrar el menú si se hace clic fuera de él
     document.addEventListener('click', (event) => {
         if (!menuIdiomas.contains(event.target) && event.target !== botonCambiarIdioma) {
             menuIdiomas.remove();
@@ -70,7 +61,6 @@ const crearMenuIdiomas = () => {
     }, { once: true });
 };
 
-// Cambiar el idioma de la web
 // Cambiar el idioma de la web
 const cambiarIdioma = (idioma) => {
     idiomaActual = idioma;
@@ -81,7 +71,7 @@ const cambiarIdioma = (idioma) => {
     document.getElementById('boton-github').textContent = idiomas[idioma].github;
 
     // Cambiar el texto del botón de cambiar idioma y el icono
-    botonCambiarIdioma.innerHTML = '';  // Limpiar el contenido anterior del botón
+    botonCambiarIdioma.innerHTML = '';
     const icono = document.createElement('i');
     if (idioma === 'es') {
         icono.className = 'fas fa-globe-americas'; // Icono para el idioma español
@@ -94,7 +84,7 @@ const cambiarIdioma = (idioma) => {
     }
 
     // Cambiar el contenido dinámico
-    contenedor.innerHTML = `<p>${idiomas[idioma].contenido}</p>`;
+    actualizarContenido(idioma);
 
     // Cambiar el texto del pie de página
     pie.innerHTML = idiomas[idioma].pie;
@@ -106,6 +96,37 @@ const cambiarIdioma = (idioma) => {
     }
 };
 
+// Actualizar el contenido del contenedor
+const actualizarContenido = (idioma) => {
+    contenedor.innerHTML = `<p>${idiomas[idioma].contenido}</p>`;
+};
+
+// Función para manejar los clicks en los botones de "Sobre de mí", "Redes sociales" y "GitHub"
+const actualizarSeccion = (seccion) => {
+    let contenido;
+    if (idiomaActual === 'es') {
+        contenido = {
+            sobreMi: "Hola, soy Fran. Bienvenidos a mi página.",
+            redesSociales: "Sígueme en mis redes sociales.",
+            github: "Visita mi GitHub para ver mis proyectos."
+        };
+    } else {
+        contenido = {
+            sobreMi: "Hello, I'm Fran. Welcome to my page.",
+            redesSociales: "Follow me on my social media.",
+            github: "Visit my GitHub to see my projects."
+        };
+    }
+    contenedor.innerHTML = `<p>${contenido[seccion]}</p>`;
+};
+
+// Añadir eventos a los botones
+document.getElementById('boton-sobre-mi').addEventListener('click', () => actualizarSeccion('sobreMi'));
+document.getElementById('boton-redes-sociales').addEventListener('click', () => actualizarSeccion('redesSociales'));
+document.getElementById('boton-github').addEventListener('click', () => actualizarSeccion('github'));
 
 // Evento para mostrar el menú de selección de idioma
 botonCambiarIdioma.addEventListener('click', crearMenuIdiomas);
+
+// Inicializar contenido por defecto
+actualizarContenido(idiomaActual);
