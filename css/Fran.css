@@ -50,9 +50,12 @@ body {
     margin-top: 80px; /* Ajustar margen para que no se superponga con el menú */
     margin-bottom: 80px; /* Espacio para evitar superposición con el pie */
     padding: 20px;
+    max-width: 900px; /* Ancho máximo del contenedor */
+    margin-left: auto; /* Centrar horizontalmente */
+    margin-right: auto;
     font-size: 18px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center; /* Centrar el texto */
+    text-align: justify; /* Justificar el texto para un mejor aspecto */
 }
 
 /* Pie de página */
@@ -125,15 +128,17 @@ body {
     }
 
     #contenedor {
-        font-size: 18px; /* Reducir el tamaño del texto */
-        padding: 150px;
+        font-size: 16px; /* Reducir el tamaño del texto */
+        padding-top: 150px; /* Reducir padding para pantallas más pequeñas */
+        max-width: 90%; /* Ancho máximo en porcentaje */
         margin-top: 100px; /* Ajustar para evitar superposición */
         margin-bottom: 100px; /* Espacio adicional para pie */
+        text-align: justify; /* Justificar texto */
     }
 
     #pie {
-        font-size: 15px;
-        padding: 20px;
+        font-size: 12px;
+        padding: 10px;
     }
 }
 
@@ -150,14 +155,16 @@ body {
     }
 
     #contenedor {
-        font-size: 18px; /* Reducir el tamaño del texto */
-        padding: 150px;
+        font-size: 16px; /* Reducir el tamaño del texto */
+        padding-top: 150px; /* Reducir padding para pantallas más pequeñas */
+        max-width: 90%; /* Ancho máximo en porcentaje */
         margin-top: 100px; /* Ajustar para evitar superposición */
         margin-bottom: 100px; /* Espacio adicional para pie */
+        text-align: justify; /* Justificar texto */
     }
 
     #pie {
-        font-size: 15px;
-        padding: 20px;
+        font-size: 12px;
+        padding: 10px;
     }
 }
