@@ -10,7 +10,12 @@ const idiomas = {
         redesSociales: "Redes sociales",
         github: "GitHub",
         cambiarIdioma: "Cambiar idioma",
-        contenido: "Hola, soy Fran. Bienvenidos a mi página.",
+        contenido: `Hola, soy Fran. Bienvenidos a mi página,
+        donde compartiré cosas sobre mí. También podrás encontrar mis redes sociales
+        y mis proyectos en GitHub para explorar, recopilar, copiar, mejorar y muchas
+        cosas más. En la navegación podrás descubrir más contenido en cada apartado.
+        Además, puedes cambiar el idioma entre inglés o español pulsando en el botón
+        [Click "Cambiar idioma" to switch to English].`,
         pie: "&copy; 2024 Fran. Todos los derechos reservados."
     },
     en: {
@@ -18,7 +23,13 @@ const idiomas = {
         redesSociales: "Social media",
         github: "GitHub",
         cambiarIdioma: "Change language",
-        contenido: "Hello, I'm Fran. Welcome to my page.",
+        contenido: `Hi, I'm Fran. Welcome to my page,
+        where I will share things about myself.
+        You can also find my social media links and my GitHub projects to explore,
+        collect, copy, improve, and much more. In the navigation, you'll discover more
+        content in each section. Additionally, you can switch the language between
+        English or Spanish by clicking the button ",
+        [Pulsa "Change Language" para cambiar al Español].`,
         pie: "&copy; 2024 Fran. All rights reserved."
     }
 };

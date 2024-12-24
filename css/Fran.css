@@ -1,4 +1,4 @@
-/* Restablecer márgenes y paddings del body */
+/* General: Restablecer márgenes y paddings del body */
 * {
     margin: 0;
     padding: 0;
@@ -10,27 +10,28 @@ body {
     padding: 0;
     overflow-x: hidden; /* Evitar scroll horizontal */
 }
+
 /* Menú superior */
 #menu {
     display: flex;
+    flex-wrap: wrap; /* Permitir que los botones salten a la siguiente línea en pantallas pequeñas */
     justify-content: center;
     align-items: center;
-    position: fixed; /* Para mantener el menú fijo en la parte superior */
+    position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient(90deg, #d90303, #9c00a4, #000e6b); /* Gradiente de rojo a morado y azul oscuro */
-    padding: 20px; /* Espaciado superior e inferior */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para el menú */
-    z-index: 1000; /* Asegura que el menú quede encima del contenido */
+    background: linear-gradient(90deg, #d90303, #9c00a4, #000e6b);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
 .menu-boton {
-    margin: 0 15px; /* Espaciado entre los botones */
-    padding: 10px 20px; /* Espaciado interno de los botones */
-    text-align: center;
-    font-size: 16px;
+    margin: 5px 10px; /* Reducir márgenes para botones en pantallas pequeñas */
+    padding: 8px 15px; /* Ajustar el padding */
+    font-size: 14px;
     font-family: Arial, sans-serif;
-    color: #ffffff; /* Texto blanco para contraste con el fondo gradiente */
+    color: #ffffff;
     text-decoration: none;
     border: 2px solid transparent;
     border-radius: 5px;
@@ -39,78 +40,124 @@ body {
 }
 
 .menu-boton:hover {
-    background-color: rgba(255, 0, 230, 0.44); /* Fondo semitransparente al pasar el cursor */
+    background-color: rgba(255, 0, 230, 0.44);
     color: #ffffff;
-    border-color: rgba(255, 2, 192, 0.859); /* Borde semitransparente */
+    border-color: rgba(255, 2, 192, 0.859);
 }
-
 
 /* Estilos adicionales para el contenedor */
 #contenedor {
-    margin-top: 100px; /* Para dar espacio debajo del menú */
+    margin-top: 80px; /* Ajustar margen para que no se superponga con el menú */
+    margin-bottom: 80px; /* Espacio para evitar superposición con el pie */
     padding: 20px;
-    font-size: 18px; /* Tamaño de fuente para que el texto sea visible */
-    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center; /* Centrar el texto */
 }
 
 /* Pie de página */
 #pie {
     display: flex;
+    flex-wrap: wrap; /* Ajustar contenido en filas en pantallas pequeñas */
     justify-content: center;
     align-items: center;
-    position: fixed; /* Para mantener el pie fijo en la parte inferior */
+    position: fixed;
     bottom: 0;
     width: 100%;
-    background: linear-gradient(90deg, #d90303, #9c00a4, #000e6b); /* Gradiente similar al del menú */
-    padding: 20px; /* Espaciado superior e inferior */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra hacia arriba para el pie */
-    z-index: 1000; /* Asegura que el pie quede encima del contenido */
-    color: #ffffff; /* Texto blanco */
+    background: linear-gradient(90deg, #d90303, #9c00a4, #000e6b);
+    padding: 15px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    color: #ffffff;
     font-family: Arial, sans-serif;
     font-size: 14px;
     text-align: center;
 }
 
 #pie a {
-    color: #ffffff; /* Enlaces blancos */
-    text-decoration: none; /* Sin subrayado */
-    margin: 0 10px; /* Espaciado entre enlaces */
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
     transition: color 0.3s ease;
 }
 
 #pie a:hover {
-    color: rgba(255, 0, 230, 0.75); /* Color rosado al pasar el cursor */
-}
-/* Estilo del menú emergente para selección de idioma */
-#menu-idiomas {
-    position: absolute;
-    background-color: #f0f0f0; /* Fondo claro */
-    border: 1px solid #ccc; /* Borde suave */
-    padding: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    z-index: 1001; /* Asegurarse de que el menú esté por encima del contenido */
-    border-radius: 5px;
-    width: 155px; /* Ancho fijo para el menú */
+    color: rgba(255, 0, 230, 0.75);
 }
 
-/* Estilo para las opciones dentro del menú */
+/* Menú emergente para idiomas */
+#menu-idiomas {
+    position: absolute;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    border-radius: 5px;
+    width: 150px;
+}
+
+/* Opciones dentro del menú emergente */
 #menu-idiomas div {
     padding: 8px;
     cursor: pointer;
     font-family: Arial, sans-serif;
-    color: #333; /* Color oscuro para el texto */
+    color: #333;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Estilo cuando se pasa el ratón sobre una opción */
 #menu-idiomas div:hover {
-    background-color: rgba(0, 0, 255, 0.1); /* Fondo semitransparente */
-    color: #d90303; /* Color de texto cuando pasa el ratón */
+    background-color: rgba(0, 0, 255, 0.1);
+    color: #d90303;
 }
 
-/* Estilo del icono dentro del botón */
-#boton-cambiar-idioma i {
-    margin-right: 8px; /* Espacio entre el icono y el texto */
-    font-size: 18px; /* Tamaño del icono */
-    vertical-align: middle; /* Centrar el icono verticalmente */
+/* RESPONSIVE: Media Queries */
+@media (max-width: 768px) {
+    #menu {
+        flex-direction: column; /* Cambiar disposición del menú a columna */
+        padding: 10px;
+    }
+
+    .menu-boton {
+        font-size: 14px; /* Reducir el tamaño de texto para botones */
+        padding: 10px;
+        margin: 5px 0; /* Espaciado entre botones */
+    }
+
+    #contenedor {
+        font-size: 18px; /* Reducir el tamaño del texto */
+        padding: 150px;
+        margin-top: 100px; /* Ajustar para evitar superposición */
+        margin-bottom: 100px; /* Espacio adicional para pie */
+    }
+
+    #pie {
+        font-size: 15px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #menu {
+        flex-direction: column; /* Cambiar disposición del menú a columna */
+        padding: 10px;
+    }
+
+    .menu-boton {
+        font-size: 14px; /* Reducir el tamaño de texto para botones */
+        padding: 10px;
+        margin: 5px 0; /* Espaciado entre botones */
+    }
+
+    #contenedor {
+        font-size: 18px; /* Reducir el tamaño del texto */
+        padding: 150px;
+        margin-top: 100px; /* Ajustar para evitar superposición */
+        margin-bottom: 100px; /* Espacio adicional para pie */
+    }
+
+    #pie {
+        font-size: 15px;
+        padding: 20px;
+    }
 }
