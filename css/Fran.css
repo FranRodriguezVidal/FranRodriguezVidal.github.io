@@ -58,6 +58,20 @@ body {
     text-align: justify; /* Justificar el texto para un mejor aspecto */
 }
 
+img {
+    width: 500px;
+    height: 500px;
+    display: block; /* Asegúrate de que la imagen se comporte como bloque */
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+.github{
+    width: 860px;
+    height: auto;
+    display: block; /* Asegúrate de que la imagen se comporte como bloque */
+}
+
+
 /* Pie de página */
 #pie {
     display: flex;
@@ -128,7 +142,7 @@ body {
     }
 
     #contenedor {
-        font-size: 16px; /* Reducir el tamaño del texto */
+        font-size: 18px; /* Reducir el tamaño del texto */
         padding-top: 150px; /* Reducir padding para pantallas más pequeñas */
         max-width: 90%; /* Ancho máximo en porcentaje */
         margin-top: 100px; /* Ajustar para evitar superposición */
@@ -136,9 +150,18 @@ body {
         text-align: justify; /* Justificar texto */
     }
 
+    img {
+        width: 80%; /* La imagen ocupará el 80% del ancho de la pantalla */
+        height: auto; /* Mantén la proporción original */
+        margin: 0 auto; /* Asegura que siga centrada */
+    }
+
+    .github{
+        width: 90%;
+    }
     #pie {
-        font-size: 12px;
-        padding: 10px;
+        font-size: 16px;
+        padding: 20px;
     }
 }
 
@@ -155,7 +178,7 @@ body {
     }
 
     #contenedor {
-        font-size: 16px; /* Reducir el tamaño del texto */
+        font-size: 18px; /* Reducir el tamaño del texto */
         padding-top: 150px; /* Reducir padding para pantallas más pequeñas */
         max-width: 90%; /* Ancho máximo en porcentaje */
         margin-top: 100px; /* Ajustar para evitar superposición */
@@ -163,8 +186,18 @@ body {
         text-align: justify; /* Justificar texto */
     }
 
+    img {
+        width: 90%; /* Reduce aún más el ancho para pantallas más pequeñas */
+        height: auto; /* Mantén la proporción original */
+        margin: 0 auto; /* Sigue centrada */
+    }
+
+    .github{
+        width: 90%;
+    }
+
     #pie {
-        font-size: 12px;
-        padding: 10px;
+        font-size: 16px;
+        padding: 20px;
     }
 }
